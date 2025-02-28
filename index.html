@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haloflash</title>
-  <link rel="stylesheet" href="haloflash.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -15,30 +15,25 @@
   <main>
     <!-- Quiz Buttons -->
     <div class="quiz-buttons">
-      <button onclick="showQuiz('quiz1')">Quiz 1: Nucleophilic Substitution</button>
-      <button onclick="showQuiz('quiz2')">Quiz 2: Haloalkane Elimination</button>
-      <button onclick="showQuiz('quiz3')">Quiz 3: Reaction Processes</button>
+      <button onclick="startQuiz('quiz1')">Quiz 1: Nucleophilic Substitution</button>
+      <button onclick="startQuiz('quiz2')">Quiz 2: Haloalkane Elimination</button>
+      <button onclick="startQuiz('quiz3')">Quiz 3: Reaction Processes</button>
     </div>
 
-    <!-- Quiz 1: Nucleophilic Substitution (SN1 and SN2) -->
-    <section id="quiz1" class="quiz-section hidden">
-      <h2>Quiz 1: Nucleophilic Substitution (SN1 and SN2)</h2>
-      <div class="flashcard" id="quiz1-flashcards"></div>
-    </section>
-
-    <!-- Quiz 2: Haloalkane Elimination -->
-    <section id="quiz2" class="quiz-section hidden">
-      <h2>Quiz 2: Haloalkane Elimination</h2>
-      <div class="flashcard" id="quiz2-flashcards"></div>
-    </section>
-
-    <!-- Quiz 3: Haloalkane Reaction Processes -->
-    <section id="quiz3" class="quiz-section hidden">
-      <h2>Quiz 3: Haloalkane Reaction Processes</h2>
-      <div class="flashcard" id="quiz3-flashcards"></div>
-    </section>
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="hidden">
+      <h2 id="quiz-title"></h2>
+      <div id="question-container">
+        <p id="question-text"></p>
+        <ul id="options-list"></ul>
+        <button id="submit-button" onclick="submitAnswer()">Submit Answer</button>
+        <p id="feedback"></p>
+        <p id="reasoning"></p>
+      </div>
+      <button id="next-button" class="hidden" onclick="nextQuestion()">Next Question</button>
+    </div>
   </main>
 
-  <script src="haloflash.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
